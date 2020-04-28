@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane minHeight="630.0" styleClass="backgroundmain1" stylesheets="@../Stylesheet/mainwindow.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="toeicApp.LearnToeicController">
+   <children>
+      <AnchorPane minHeight="25.0" prefHeight="95.0" prefWidth="900.0">
+         <children>
+            <AnchorPane layoutX="680.0" maxWidth="220.0" minWidth="220.0" prefHeight="100.0" prefWidth="283.0" styleClass="pane1" stylesheets="@../Stylesheet/mainwindow.css">
+               <children>
+                  <Button fx:id="close" layoutX="150.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="70.0" styleClass="exitButton" stylesheets="@../Stylesheet/mainwindow.css" text="X" />
+                  <Button layoutX="98.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="52.0" styleClass="exitButton" stylesheets="@../Stylesheet/mainwindow.css" text="--" />
+                  <Label layoutX="20.0" layoutY="4.0" text="Test" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="30.0" fitWidth="34.0" layoutX="20.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/Icon/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="55.0" layoutY="6.0" text="Toeic With Us" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="30.0" prefHeight="600.0" prefWidth="900.0" styleClass="backgroundmain" stylesheets="@../Stylesheet/mainwindow.css">
+         <children>
+            <Button fx:id="backButton" layoutX="21.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" prefHeight="34.0" prefWidth="71.0" styleClass="backButton" stylesheets="@../Stylesheet/learnToeic.css" text="Back" />
+            <HBox layoutX="49.0" layoutY="141.0" prefHeight="258.0" prefWidth="379.0" styleClass="border" stylesheets="@../Stylesheet/learnToeic.css">
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <ImageView fx:id="imageWord" fitHeight="233.0" fitWidth="340.0" focusTraversable="true" layoutX="16.0" layoutY="10.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <VBox layoutX="453.0" layoutY="141.0" prefHeight="258.0" prefWidth="392.0" styleClass="border" stylesheets="@../Stylesheet/learnToeic.css">
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <Label fx:id="wordDisplay" layoutX="28.0" prefHeight="67.0" prefWidth="349.0" wrapText="true">
+                           <font>
+                              <Font name="System Bold Italic" size="31.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="0.8904761904761905" startX="1.0" startY="0.36666666666666664">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color blue="1.0" green="0.7427797913551331" red="0.05000000074505806" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color blue="1.0" green="1.0" red="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <HBox>
+                     <children>
+                        <AnchorPane>
+                           <children>
+                              <Label fx:id="typeDisplay" layoutX="23.0" prefHeight="34.0" prefWidth="100.0" textFill="#a2ffbb" wrapText="true">
+                                 <font>
+                                    <Font name="System Italic" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="pronounceDisplay" layoutX="149.0" prefHeight="36.0" prefWidth="237.0" textFill="#ffaf53" wrapText="true">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <AnchorPane prefHeight="71.0" prefWidth="375.0">
+                     <children>
+                        <Label fx:id="engdescriptionDisplay" layoutX="21.0" prefHeight="71.0" prefWidth="370.0" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="0.8904761904761905" startX="1.0" startY="0.40476190476190477">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color blue="0.17537906765937805" green="1.0" red="0.05999999865889549" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color blue="1.0" green="1.0" red="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane>
+                     <children>
+                        <Label fx:id="viedescriptionDisplay" layoutX="20.0" prefHeight="84.0" prefWidth="379.0" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="0.8904761904761905" startX="1.0" startY="0.40476190476190477">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color blue="0.04899999871850014" green="0.9800000190734863" red="0.9026967287063599" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color blue="1.0" green="1.0" red="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <VBox layoutX="49.0" layoutY="453.0" prefHeight="114.0" prefWidth="803.0" styleClass="border" stylesheets="@../Stylesheet/learnToeic.css">
+               <children>
+                  <Label fx:id="engexampleDisplay" alignment="CENTER" prefHeight="59.0" prefWidth="796.0" stylesheets="@../Stylesheet/mainwindow.css" textFill="#e5ff7b" wrapText="true">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="vieexampleDisplay" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="798.0" textFill="#f8acdc" wrapText="true">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Label fx:id="topic" alignment="CENTER" layoutX="49.0" layoutY="62.0" prefHeight="72.0" prefWidth="803.0" styleClass="border" stylesheets="@../Stylesheet/learnToeic.css" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="0.8476190476190476" startX="1.0" startY="0.28095238095238095">
+                     <stops>
+                        <Stop color="#ff0c0c" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Button fx:id="audioButton" layoutX="427.0" layoutY="405.0" mnemonicParsing="false" onAction="#handlePhone" onKeyPressed="#handlePhone" styleClass="audioButton" stylesheets="@../Stylesheet/learnToeic.css">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Resources/Icon/audio.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="nextButton" layoutX="498.0" layoutY="406.0" mnemonicParsing="false" onAction="#handlePage" prefHeight="42.0" prefWidth="108.0" styleClass="nextButton" stylesheets="@../Stylesheet/learnToeic.css" text="Next" />
+            <Button fx:id="prevButton" layoutX="301.0" layoutY="406.0" mnemonicParsing="false" onAction="#handlePage" prefHeight="42.0" prefWidth="100.0" styleClass="nextButton" stylesheets="@../Stylesheet/learnToeic.css" text="Previous" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

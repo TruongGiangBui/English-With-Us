@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="backgroundmain" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane layoutX="24.0" layoutY="73.0" prefHeight="506.0" prefWidth="843.0" side="LEFT" stylesheets="@../Stylesheet/mainwindow.css" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Kho từ của bạn">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="border" stylesheets="@../Stylesheet/Test.css">
+                     <children>
+                        <ListView layoutX="18.0" layoutY="23.0" prefHeight="460.0" prefWidth="325.0" styleClass="background1" stylesheets="@../Stylesheet/Test.css" />
+                        <AnchorPane layoutX="359.0" layoutY="23.0" prefHeight="461.0" prefWidth="425.0" styleClass="background2" stylesheets="@../Stylesheet/Test.css">
+                           <children>
+                              <TextField layoutX="23.0" layoutY="24.0" prefHeight="421.0" prefWidth="380.0" styleClass="backgroundmain" stylesheets="@../Stylesheet/mainwindow.css" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Kiểm tra">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="border" stylesheets="@../Stylesheet/mainwindow.css">
+                     <children>
+                        <AnchorPane layoutX="53.0" layoutY="29.0" prefHeight="439.0" prefWidth="193.0" styleClass="background2" stylesheets="@../Stylesheet/Test.css" />
+                        <AnchorPane layoutX="297.0" layoutY="29.0" prefHeight="119.0" prefWidth="480.0" styleClass="background2" stylesheets="@../Stylesheet/Test.css" />
+                        <ToggleButton layoutX="347.0" layoutY="185.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="428.0" styleClass="test2Button" stylesheets="@../Stylesheet/Test.css">
+                           <graphic>
+                              <Label prefHeight="50.0" prefWidth="401.0" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton layoutX="347.0" layoutY="253.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="428.0" styleClass="test2Button" stylesheets="@../Stylesheet/Test.css">
+                           <graphic>
+                              <Label prefHeight="20.0" prefWidth="406.0" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton layoutX="347.0" layoutY="318.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="428.0" styleClass="test2Button" stylesheets="@../Stylesheet/Test.css">
+                           <graphic>
+                              <Label prefHeight="31.0" prefWidth="406.0" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton layoutX="347.0" layoutY="381.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="428.0" styleClass="test2Button" stylesheets="@../Stylesheet/Test.css">
+                           <graphic>
+                              <Label prefHeight="31.0" prefWidth="406.0" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </ToggleButton>
+                        <Label alignment="CENTER" layoutX="298.0" layoutY="189.0" prefHeight="42.0" prefWidth="42.0" styleClass="choice2" stylesheets="@../Stylesheet/Test.css" text="A" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="298.0" layoutY="257.0" prefHeight="42.0" prefWidth="42.0" styleClass="choice2" stylesheets="@../Stylesheet/Test.css" text="B" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="298.0" layoutY="322.0" prefHeight="42.0" prefWidth="42.0" styleClass="choice2" stylesheets="@../Stylesheet/Test.css" text="C" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="297.0" layoutY="385.0" prefHeight="42.0" prefWidth="42.0" styleClass="choice2" stylesheets="@../Stylesheet/Test.css" text="D" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+   <stylesheets>
+      <URL value="@../Stylesheet/mainwindow.css" />
+      <URL value="@../Stylesheet/Test.css" />
+   </stylesheets>
+</AnchorPane>

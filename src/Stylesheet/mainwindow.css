@@ -1,0 +1,237 @@
+.border {
+
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-background-color:#272b4a;
+}
+
+.border1 {
+
+
+    -fx-border-width: 2 2 2 2;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-background-color:transparent;
+}
+.backgroundmain {
+    -fx-background-color: #1b203a;
+    -fx-background-radius: 20 0 20 20;
+}
+.backgroundmain1 {
+    -fx-background-color: #0a0d1a;
+    -fx-background-radius: 20;
+}
+.pane1
+{
+    -fx-background-color: linear-gradient(to right, #28acdf 0%, #32c7bb 51%, #3fe19a 100%);
+    -fx-background-radius: 20;
+}
+
+.exitButton {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0 20 0 0;
+    -fx-text-align: center;
+    -fx-text-fill: white;
+
+
+}
+.exitButton:hover {
+    -fx-background-color: #ff140a;
+}
+
+
+.learnButton {
+    -fx-background-color: linear-gradient(to right, #fa3008 0%, #fd9b33 50%, #fdf133 100%);
+    -fx-border-color: linear-gradient(to right,  #fa3008 0%, #fd9b33 50%, #fdf133 100%);
+
+    -fx-border-width: 1 1 1 1;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-text-align: center;
+    -fx-text-fill: white;
+
+    -fx-transition: all 0.5s;
+    -fx-cursor: pointer;
+    -fx-margin: 5px;
+}
+.learnButton:hover {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.testButton {
+    -fx-background-color: linear-gradient(to right, #2ffd3d 0%, #2ffd9e 50%, #2efcfa 100%);
+    -fx-border-color: linear-gradient(to right, #2ffd3d 0%, #2ffd9e 50%, #2efcfa 100%);
+
+    -fx-border-width: 1 1 1 1;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-text-align: center;
+    -fx-text-fill: white;
+
+    -fx-transition: all 0.5s;
+    -fx-cursor: pointer;
+    -fx-margin: 5px;
+}
+.testButton:hover {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.practiceButton {
+    -fx-background-color: linear-gradient(to right, #fcfa2e 0%, #a8fd2f 50%, #47fe2f 100%);
+    -fx-border-color: linear-gradient(to right,#fcfa2e 0%, #a8fd2f 50%, #47fe2f 100%);
+
+    -fx-border-width: 1 1 1 1;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-text-align: center;
+    -fx-text-fill: white;
+
+    -fx-transition: all 0.5s;
+    -fx-cursor: pointer;
+    -fx-margin: 5px;
+}
+.practiceButton:hover {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.Button6 {
+    -fx-background-color: linear-gradient(to right, #fb2eea 0%, #fb2e8f 50%, #fc2e3d 100%);
+    -fx-border-color: linear-gradient(to right,  #fb2eea 0%, #fb2e8f 50%, #fc2e3d 100%);
+
+    -fx-border-width: 1 1 1 1;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-text-align: center;
+    -fx-text-fill: white;
+
+    -fx-transition: all 0.5s;
+    -fx-cursor: pointer;
+    -fx-margin: 5px;
+}
+.Button6:hover {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+.Button4 {
+    -fx-background-color: linear-gradient(to right, #2eebfc 0%, #2fa4fe 50%, #2e42fc 100%);
+    -fx-border-color: linear-gradient(to right, #2eebfc 0%, #2fa4fe 50%, #2e42fc 100%);
+
+    -fx-border-width: 1 1 1 1;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-text-align: center;
+    -fx-text-fill: white;
+
+    -fx-transition: all 0.5s;
+    -fx-cursor: pointer;
+    -fx-margin: 5px;
+}
+.Button4:hover {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+.Button5 {
+    -fx-background-color: linear-gradient(to right, #382efc 0%, #932efb 50%, #ef2efb 100%);
+    -fx-border-color: linear-gradient(to right,  #382efc 0%, #932efb 50%, #ef2efb 100%);
+    -fx-border-width: 1 1 1 1;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-text-align: center;
+    -fx-text-fill: white;
+
+    -fx-transition: all 0.5s;
+    -fx-cursor: pointer;
+    -fx-margin: 5px;
+}
+.Button5:hover {
+
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.tab-pane >.tab-header-area >.tab-header-background {
+    -fx-background-color:#272b4a;
+    -fx-background-radius: 20px 20px 0px 0px;
+    -fx-background-size: 60 90;
+}
+.tab-pane > .tab-header-area > .headers-region > .tab {
+    /*fx-shape: "M300,290 L310,168 L410,168 L421,290 L300,290 z";*/
+    -fx-border-radius: 10 10 5 5;
+    -fx-border-color:linear-gradient(to right, #2eebfc 0%, #2fa4fe 50%, #2e42fc 100%);
+    -fx-background-radius: 10 10 5 5;
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    /*-fx-shape: "M300,290 L310,168 L410,168 L421,290 L300,290 z";*/
+    -fx-border-radius: 10 10 5 5;
+    -fx-background-radius:10 10 5 5;
+    -fx-border-color: transparent;
+}
+.tab-label {
+    -fx-text-fill: white ;
+}
+
+
+
+.tab {
+    -fx-font-family: Arial;
+    -fx-font-size: 18;
+    -fx-text-fill: white;
+    -fx-background-color: #1b203a;
+    -fx-border-color: #00ffc7;
+}
+
+.tab:selected {
+    -fx-background-color:linear-gradient(to right, #2eebfc 0%, #2fa4fe 50%, #2e42fc 100%);
+    -fx-border-color: transparent;
+}
+
+.loginform {
+
+
+    -fx-border-width: 2 2 2 2;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-background-color:linear-gradient(to right, #28acdf 0%, #32c7bb 51%, #3fe19a 100%);
+}
+
+
+.chart {
+    -fx-padding: 10px;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+.chart-content {
+    -fx-padding: 30px;
+}
+
+.chart-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 1.6em;
+}
+
+.axis-label {
+    -fx-text-fill: #ffffff;
+}
+
+.chart-legend {
+    -fx-background-color:  transparent;
+    -fx-padding: 20px;
+}
+
+.chart-legend-item-symbol{
+    -fx-background-radius: 0;
+}
+
+.chart-legend-item{
+    -fx-text-fill: #191970;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+

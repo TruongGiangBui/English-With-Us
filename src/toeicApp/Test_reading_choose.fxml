@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="630.0" styleClass="backgroundmain1" stylesheets="@../Stylesheet/mainwindow.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="toeicApp.TestReadingChooseController">
+   <children>
+      <AnchorPane minHeight="25.0" prefHeight="95.0" prefWidth="900.0">
+         <children>
+            <AnchorPane layoutX="680.0" maxWidth="220.0" minWidth="220.0" prefHeight="100.0" prefWidth="283.0" styleClass="pane1" stylesheets="@../Stylesheet/mainwindow.css">
+               <children>
+                  <Button fx:id="close" layoutX="150.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="70.0" styleClass="exitButton" stylesheets="@../Stylesheet/mainwindow.css" text="X" />
+                  <Button layoutX="98.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="52.0" styleClass="exitButton" stylesheets="@../Stylesheet/mainwindow.css" text="--" />
+                  <Label layoutX="20.0" layoutY="4.0" text="Test" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="30.0" fitWidth="34.0" layoutX="20.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/Icon/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="55.0" layoutY="6.0" text="Toeic With Us" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="30.0" prefHeight="600.0" prefWidth="900.0" styleClass="backgroundmain" stylesheets="@../Stylesheet/mainwindow.css">
+          <children>
+              <Button fx:id="backButton" layoutX="37.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleScene" prefHeight="42.0" prefWidth="65.0" styleClass="backButton" stylesheets="@../Stylesheet/test_reading_choose.css" text="Back" />
+              <ToggleButton fx:id="button2" layoutX="344.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleQuestion" prefHeight="50.0" prefWidth="500.0" styleClass="testButton" stylesheets="@../Stylesheet/test_reading_choose.css">
+                  <graphic>
+                      <Label fx:id="answer2" prefHeight="22.0" prefWidth="487.0" textFill="WHITE" wrapText="true">
+                          <font>
+                              <Font size="19.0" />
+                          </font>
+                      </Label>
+                  </graphic>
+              </ToggleButton>
+              <ToggleButton fx:id="button3" layoutX="344.0" layoutY="402.0" mnemonicParsing="false" onAction="#handleQuestion" prefHeight="50.0" prefWidth="500.0" styleClass="testButton" stylesheets="@../Stylesheet/test_reading_choose.css">
+                  <graphic>
+                      <Label fx:id="answer3" prefHeight="22.0" prefWidth="487.0" textFill="WHITE" wrapText="true">
+                          <font>
+                              <Font size="19.0" />
+                          </font>
+                      </Label>
+                  </graphic>
+              </ToggleButton>
+              <ToggleButton fx:id="button4" layoutX="344.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleQuestion" prefHeight="50.0" prefWidth="500.0" styleClass="testButton" stylesheets="@../Stylesheet/test_reading_choose.css">
+                  <graphic>
+                      <Label fx:id="answer4" prefHeight="22.0" prefWidth="487.0" textFill="WHITE" wrapText="true">
+                          <font>
+                              <Font size="19.0" />
+                          </font>
+                      </Label>
+                  </graphic>
+              </ToggleButton>
+              <AnchorPane layoutX="294.0" layoutY="104.0" prefHeight="122.0" prefWidth="550.0" styleClass="background" stylesheets="@../Stylesheet/test_reading_choose.css">
+                  <children>
+                      <Label fx:id="question" alignment="CENTER" layoutX="28.0" layoutY="20.0" prefHeight="87.0" prefWidth="500.0" wrapText="true">
+                          <textFill>
+                              <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                                  <stops>
+                                      <Stop color="#e5ff00" />
+                                      <Stop color="WHITE" offset="1.0" />
+                                  </stops>
+                              </LinearGradient>
+                          </textFill>
+                          <font>
+                              <Font name="System Bold" size="22.0" />
+                          </font>
+                  </Label>
+                  </children>
+              </AnchorPane>
+              <AnchorPane layoutX="56.0" layoutY="100.0" prefHeight="422.0" prefWidth="200.0" styleClass="background" stylesheets="@../Stylesheet/test_reading_choose.css">
+                  <children>
+                      <Label fx:id="numberQuestion" alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="176.0" prefHeight="70.0" prefWidth="158.0" text="35/60" textAlignment="CENTER" wrapText="true">
+                          <font>
+                              <Font name="System Bold" size="48.0" />
+                          </font>
+                          <textFill>
+                              <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.21904761904761905">
+                                  <stops>
+                                      <Stop color="#e5ff00" />
+                                      <Stop color="WHITE" offset="1.0" />
+                                  </stops>
+                              </LinearGradient>
+                          </textFill>
+                      </Label>
+                      <Label layoutX="38.0" layoutY="133.0" prefHeight="42.0" prefWidth="124.0" text="Question" textFill="WHITE">
+                          <font>
+                              <Font name="System Bold" size="29.0" />
+                          </font>
+                      </Label>
+                      <Label alignment="CENTER" layoutX="21.0" layoutY="56.0" prefHeight="70.0" prefWidth="158.0" text="FIGHTING">
+                          <font>
+                              <Font name="Segoe Print" size="29.0" />
+                          </font>
+                          <textFill>
+                              <LinearGradient endX="1.0" endY="0.6095238095238096" startX="1.0" startY="0.20476190476190476">
+                                  <stops>
+                                      <Stop color="RED" />
+                                      <Stop color="WHITE" offset="1.0" />
+                                  </stops>
+                              </LinearGradient>
+                          </textFill>
+                      </Label>
+                  <Label fx:id="clock" alignment="CENTER" layoutX="28.0" layoutY="287.0" prefHeight="77.0" prefWidth="144.0" text="00:00" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  </children>
+              </AnchorPane>
+              <ToggleButton fx:id="button1" layoutX="344.0" layoutY="266.0" mnemonicParsing="false" onAction="#handleQuestion" prefHeight="50.0" prefWidth="500.0" styleClass="testButton" stylesheets="@../Stylesheet/test_reading_choose.css">
+                  <graphic>
+                      <Label fx:id="answer1" prefHeight="28.0" prefWidth="481.0" textFill="WHITE" wrapText="true">
+                          <font>
+                              <Font size="19.0" />
+                          </font>
+                      </Label>
+                  </graphic>
+              </ToggleButton>
+              <Label alignment="CENTER" layoutX="294.0" layoutY="271.0" prefHeight="40.0" prefWidth="40.0" styleClass="choice1" stylesheets="@../Stylesheet/Test.css" text="A" textFill="#fffefe">
+                  <font>
+                      <Font name="System Bold" size="25.0" />
+                  </font>
+              </Label>
+              <Label alignment="CENTER" layoutX="294.0" layoutY="342.0" prefHeight="40.0" prefWidth="40.0" styleClass="choice1" stylesheets="@../Stylesheet/Test.css" text="B" textFill="#fffefe">
+                  <font>
+                      <Font name="System Bold" size="25.0" />
+                  </font>
+              </Label>
+              <Label alignment="CENTER" layoutX="294.0" layoutY="407.0" prefHeight="40.0" prefWidth="40.0" styleClass="choice1" stylesheets="@../Stylesheet/Test.css" text="C" textFill="#fffefe">
+                  <font>
+                      <Font name="System Bold" size="25.0" />
+                  </font>
+              </Label>
+              <Label alignment="CENTER" layoutX="294.0" layoutY="474.0" prefHeight="40.0" prefWidth="40.0" styleClass="choice1" stylesheets="@../Stylesheet/Test.css" text="D" textFill="#fffefe">
+                  <font>
+                      <Font name="System Bold" size="25.0" />
+                  </font>
+              </Label>
+              <Button fx:id="nextbutton" layoutX="471.0" layoutY="538.0" mnemonicParsing="false" onAction="#changeQuestion" prefHeight="42.0" prefWidth="84.0" styleClass="backButton" stylesheets="@../Stylesheet/test_reading_choose.css" text="Next" />
+              <Button fx:id="previousbutton" layoutX="344.0" layoutY="538.0" mnemonicParsing="false" onAction="#changeQuestion" prefHeight="42.0" prefWidth="84.0" styleClass="backButton" stylesheets="@../Stylesheet/test_reading_choose.css" text="Previous" />
+            <Button fx:id="startfinish" layoutX="415.0" layoutY="37.0" mnemonicParsing="false" onAction="#start" prefHeight="42.0" prefWidth="85.0" styleClass="backButton" stylesheets="@../Stylesheet/test_reading_choose.css" text="Bắt đầu" />
+            <AnchorPane fx:id="noti" layoutX="228.0" layoutY="147.0" prefHeight="288.0" prefWidth="445.0" styleClass="background" stylesheets="@../Stylesheet/test_reading_choose.css" visible="false">
+               <children>
+                  <Label alignment="CENTER" layoutX="48.0" layoutY="65.0" prefHeight="38.0" prefWidth="350.0" text="Số điểm bạn đạt được là">
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                           <stops>
+                              <Stop color="RED" />
+                              <Stop color="#ffd200" offset="0.5292096219931272" />
+                              <Stop color="#e1ff00" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <font>
+                        <Font name="System Bold Italic" size="29.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pointlabel" alignment="CENTER" layoutX="97.0" layoutY="108.0" prefHeight="87.0" prefWidth="253.0" text="30/45" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="53.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="backButton1" layoutX="141.0" layoutY="209.0" mnemonicParsing="false" onAction="#handleScene" prefHeight="42.0" prefWidth="65.0" styleClass="backButton" stylesheets="@../Stylesheet/test_reading_choose.css" text="Return" />
+                  <Button layoutX="240.0" layoutY="209.0" mnemonicParsing="false" onAction="#showCorrectAnswers" prefHeight="42.0" prefWidth="65.0" styleClass="backButton" stylesheets="@../Stylesheet/test_reading_choose.css" text="View" />
+               </children>
+            </AnchorPane>
+          </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
