@@ -30,7 +30,7 @@ public class Controller {
     @FXML
     private Button learnbutton;
     @FXML
-    private Button testbutton,practicebutton,aboutbutton,close;
+    private Button testbutton,practicebutton,aboutbutton,close,result;
     @FXML
     private Button signin,signup,signout,signup1,cancel;
     @FXML
@@ -54,6 +54,8 @@ public class Controller {
                 root = FXMLLoader.load(getClass().getResource("SelectTopicPracticeToeic.fxml"));
             } else if (event.getSource() == testbutton) {
                 root = FXMLLoader.load(getClass().getResource("SelectTopicTestToiec.fxml"));
+            } else if(event.getSource()==result) {
+                root = FXMLLoader.load(getClass().getResource("Study_chart.fxml"));
             }
         }
         if(event.getSource()==close) {
@@ -93,7 +95,6 @@ public class Controller {
                 userName.setText(username.getText());
                 username.clear();
                 password.clear();
-                System.out.println(userID);
                 alert.setVisible(false);
             }
             else {
@@ -119,5 +120,9 @@ public class Controller {
         {
             signupform.setVisible(false);
         }
+    }
+    public static int getUserID()
+    {
+        return userID;
     }
 }

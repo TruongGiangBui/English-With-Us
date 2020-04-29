@@ -1,0 +1,51 @@
+.pane1
+{
+    -fx-background-color: linear-gradient(to right, #28acdf 0%, #32c7bb 51%, #3fe19a 100%);
+    -fx-background-radius: 10;
+}
+
+
+.pane2
+{
+    -fx-background-color: white;
+    -fx-border-color: #00ffc7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+.pane3
+{
+    -fx-background-color: transparent;
+}
+
+.test1Button:hover {
+    -fx-background-color:transparent ;
+    -fx-border-color: #21f4b4;
+    -fx-border-width: 1 1 1 1;
+    -fx-text-fill: #21f4b4;
+    -fx-border-radius: 5px;
+    -fx-text-align: center;
+}
+.test1Button {
+
+    -fx-background-color: linear-gradient(to right, #28acdf 0%, #32c7bb 51%, #3fe19a 100%);
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border: none;
+    -fx-text-fill: white;
+    -fx-text-align: center;
+}
+.test1Button:pressed{
+    -fx-translate-y: 1px;
+}
+.closebutton{
+    -fx-background-color: white;
+    -fx-background-radius: 0 10 0 0;
+    -fx-border: none;
+    -fx-text-fill: black;
+    -fx-text-align: center;
+}
+.closebutton:hover{
+    -fx-background-color: red;
+    -fx-text-fill: white;
+    -fx-text-align: center;
+}

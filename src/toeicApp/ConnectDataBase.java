@@ -81,7 +81,25 @@ public class ConnectDataBase {
         }
         return data;
     }
-
+    public ArrayList<String> getallWord()
+    {
+        ArrayList<String> data=new ArrayList<>();
+        String query="select word from toeicword";
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet resultSet=statement.executeQuery(query);
+            while(resultSet.next())
+            {
+                String w=resultSet.getString(1);
+                data.add(w);
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return data;
+    }
     public ArrayList<ToeicWords> searchWord(String word)
     {
         ArrayList<ToeicWords> data = new ArrayList<>();
@@ -139,18 +157,26 @@ public class ConnectDataBase {
         return -1;
     }
 
-    public boolean newuser(String username,String password)
+    public void newuser(String username,String password)
     {
         try{
             Statement statement=conn.createStatement();
-           boolean s=statement.execute("insert into users(userID,password) VALUES ('"+username+"','"+password+"');");
-           return s;
+           statement.execute("insert into users(userID,password) VALUES ('"+username+"','"+password+"');");
+           ResultSet res =statement.executeQuery("select ID from users where userID='"+username+"'");
+           if(res.next())
+           {
+               int ID=res.getInt(1);
+               for(int i=1;i<=50;i++)
+               {
+                   statement.execute("insert into ToeicTestResult values ("+ID+","+i+",0,0,0);");
+               }
+           }
+
         }
         catch (SQLException e)
         {
             e.printStackTrace();
         }
-        return false;
     }
 
     public ArrayList<UserWords> getUserWord(int userID)
@@ -173,5 +199,64 @@ public class ConnectDataBase {
             e.printStackTrace();
         }
         return data;
+    }
+    public void updateUserChooseResult(int userID,int topicID,int result)
+    {
+        try
+        {
+            Statement statement=conn.createStatement();
+            ResultSet rs=statement.executeQuery("select choose,write from ToeicTestResult where userID="+userID+" and topicID="+topicID);
+            if(rs.next()){
+                int choose=rs.getInt(1);
+                int write=rs.getInt(2);
+                if(choose<result)
+                {
+                    statement.executeUpdate("update ToeicTestResult set choose="+result+" where userID="+userID+" and topicID="+topicID);
+                    if(write>10&&result>10)
+                    {
+                        statement.executeUpdate("update ToeicTestResult set passed=1 where userID="+userID+" and topicID="+topicID);
+                    }
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+    public void updateUserWriteResult(int userID,int topicID,int result)
+    {
+        try
+        {
+            Statement statement=conn.createStatement();
+            ResultSet rs=statement.executeQuery("select write,choose from ToeicTestResult where userID="+userID+" and topicID="+topicID);
+            if(rs.next()){
+                int choose=rs.getInt(2);
+                int write=rs.getInt(1);
+                if(write<result)
+                {
+                    statement.executeUpdate("update ToeicTestResult set write ="+result+" where userID="+userID+" and topicID="+topicID);
+                    if(write>10&&result>10)
+                    {
+                        statement.executeUpdate("update ToeicTestResult set passed=1 where userID="+userID+" and topicID="+topicID);
+                    }
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+    public double passedPercent(int userID)
+    {
+        int pass=0;
+        try{
+            Statement statement=conn.createStatement();
+            ResultSet resultSet=statement.executeQuery("select passed from ToeicTestResult where userID="+userID);
+            while(resultSet.next())
+            {
+                if(resultSet.getInt(1)==1) pass++;
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return pass*2;
     }
 }

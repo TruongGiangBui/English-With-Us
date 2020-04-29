@@ -36,11 +36,11 @@ public class SelectTopicTestToeicController {
         else if(event.getSource()==okbutton)
         {
             checkSelectButton();
-            for(int x:selectedTopic)
-            {
-                System.out.println(x);
-            }
-            root= FXMLLoader.load(getClass().getResource("Test_reading_choose.fxml"));
+//            for(int x:selectedTopic)
+//            {
+//                System.out.println(x);
+//            }
+            root= FXMLLoader.load(getClass().getResource("SelectTestOption.fxml"));
         }else
         {
             root=FXMLLoader.load(getClass().getResource("selectTopictTestToeic.fxml"));

@@ -42,7 +42,7 @@
             <AnchorPane layoutX="353.0" layoutY="111.0" prefHeight="184.0" prefWidth="496.0" styleClass="pane1" stylesheets="@../Stylesheet/mainwindow.css">
                <children>
                   <ImageView fitHeight="134.0" fitWidth="245.0" layoutX="35.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button layoutX="325.0" layoutY="116.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" styleClass="startbutton" stylesheets="@../Stylesheet/selectTest.css" text="Làm bài" />
+                  <Button fx:id="start_write" layoutX="325.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleScene" prefHeight="25.0" prefWidth="150.0" styleClass="startbutton" stylesheets="@../Stylesheet/selectTest.css" text="Làm bài" />
                   <Label alignment="CENTER" layoutX="318.0" layoutY="55.0" prefHeight="27.0" prefWidth="157.0" text="Đọc - Viết lại từ" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
@@ -57,23 +57,23 @@
                         <Image url="@../Resources/Layout/test_choose.PNG" />
                      </image>
                   </ImageView>
-                  <Button layoutX="325.0" layoutY="153.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" styleClass="startbutton" stylesheets="@../Stylesheet/selectTest.css" text="Làm bài" />
+                  <Button fx:id="start_choose" layoutX="325.0" layoutY="153.0" mnemonicParsing="false" onAction="#handleScene" prefHeight="25.0" prefWidth="150.0" styleClass="startbutton" stylesheets="@../Stylesheet/selectTest.css" text="Làm bài" />
                   <Label alignment="CENTER" layoutX="30.0" layoutY="198.0" prefHeight="28.0" prefWidth="262.0" text="Đọc - Chọn đáp án đúng" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="22.0" />
                      </font>
                   </Label>
-                  <ToggleButton layoutX="330.0" layoutY="54.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" selected="true" styleClass="choosebutton" stylesheets="@../Stylesheet/selectTest.css" text="Anh - Việt">
+                  <ToggleButton fx:id="eng_vie" layoutX="330.0" layoutY="54.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" selected="true" styleClass="choosebutton" stylesheets="@../Stylesheet/selectTest.css" text="Anh - Việt">
                      <toggleGroup>
                         <ToggleGroup fx:id="option" />
                      </toggleGroup>
                   </ToggleButton>
-                  <ToggleButton layoutX="330.0" layoutY="94.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" styleClass="choosebutton" stylesheets="@../Stylesheet/selectTest.css" text="Việt - Anh" toggleGroup="$option" />
+                  <ToggleButton fx:id="vie_eng" layoutX="330.0" layoutY="94.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" styleClass="choosebutton" stylesheets="@../Stylesheet/selectTest.css" text="Việt - Anh" toggleGroup="$option" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="84.0" layoutY="110.0" prefHeight="426.0" prefWidth="249.0">
                <children>
-                  <ToggleButton mnemonicParsing="false" prefHeight="144.0" prefWidth="249.0" selected="true" styleClass="leveleasybutton" stylesheets="@../Stylesheet/selectTest.css" text="Easy" textFill="WHITE">
+                  <ToggleButton fx:id="easy" mnemonicParsing="false" prefHeight="144.0" prefWidth="249.0" selected="true" styleClass="leveleasybutton" stylesheets="@../Stylesheet/selectTest.css" text="Easy" textFill="WHITE">
                      <toggleGroup>
                         <ToggleGroup fx:id="level" />
                      </toggleGroup>
@@ -81,12 +81,12 @@
                         <Font name="System Bold" size="30.0" />
                      </font>
                   </ToggleButton>
-                  <ToggleButton layoutY="150.0" mnemonicParsing="false" prefHeight="144.0" prefWidth="249.0" styleClass="levelmediumbutton" stylesheets="@../Stylesheet/selectTest.css" text="Medium" textFill="WHITE" toggleGroup="$level">
+                  <ToggleButton fx:id="normal" layoutY="150.0" mnemonicParsing="false" prefHeight="144.0" prefWidth="249.0" styleClass="levelmediumbutton" stylesheets="@../Stylesheet/selectTest.css" text="Normal" textFill="WHITE" toggleGroup="$level">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
                   </ToggleButton>
-                  <ToggleButton layoutY="300.0" mnemonicParsing="false" prefHeight="144.0" prefWidth="249.0" styleClass="levelhardbutton" stylesheets="@../Stylesheet/selectTest.css" text="Hard" textFill="WHITE" toggleGroup="$level">
+                  <ToggleButton fx:id="hard" layoutY="300.0" mnemonicParsing="false" prefHeight="144.0" prefWidth="249.0" styleClass="levelhardbutton" stylesheets="@../Stylesheet/selectTest.css" text="Hard" textFill="WHITE" toggleGroup="$level">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>

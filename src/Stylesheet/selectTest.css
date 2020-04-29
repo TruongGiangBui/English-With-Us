@@ -216,3 +216,49 @@
     -fx-transition: all 0.5s;
     -fx-cursor: pointer;
 }
+
+
+.pane1
+{
+    -fx-background-color: linear-gradient(to right, #28acdf 0%, #32c7bb 51%, #3fe19a 100%);
+    -fx-background-radius: 20;
+}
+
+
+.leveleasybutton
+{
+    -fx-background-color:  linear-gradient(to right, #28acdf 0%, #32c7bb 51%, #3fe19a 100%);
+    -fx-background-radius: 20 20 0 0;
+}
+.levelmediumbutton
+{
+    -fx-background-color:  linear-gradient(to right, #28acdf 0%, #32c7bb 51%, #3fe19a 100%);
+    -fx-background-radius: 0;
+}
+.levelhardbutton
+{
+    -fx-background-color:  linear-gradient(to right, #28acdf 0%, #32c7bb 51%, #3fe19a 100%);
+    -fx-background-radius: 0 0 20 20;
+}
+
+.choosebutton
+{
+    -fx-background-color:  linear-gradient(to right, #ff9191 0%, #e7e8e5 51%, #ff9c9c 100%);
+    -fx-background-radius: 5;
+}
+
+.toggle-button:selected
+{
+    -fx-background-color:  linear-gradient(to right, #fa3008 0%, #fdf133 50%,  #fa3008  100%);
+}
+
+.startbutton{
+    -fx-background-color:  linear-gradient(to right, #ff9191 0%, #e7e8e5 51%, #ff9c9c 100%);
+    -fx-background-radius: 5;
+}
+.startbutton:hover{
+    -fx-background-color:  linear-gradient(to right, #fa3008 0%, #fd9b33 50%, #fdf133 100%);
+}
+.startbutton:pressed{
+    -fx-translate-y: 1px;
+}

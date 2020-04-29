@@ -23,6 +23,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class TestReadingChooseController {
+    private boolean eng_vie=SelectTestOptionController.eng_vie_option;
+    private int userID=Controller.getUserID();
+    private int level=SelectTestOptionController.level;
     private ArrayList<Integer> selectedTopic=SelectTopicTestToeicController.selectedTopic;;
     @FXML
     private ToggleButton button1,button2,button3,button4;
@@ -59,9 +62,11 @@ public class TestReadingChooseController {
         }
         numberQuestion.setText("0/"+datatopic.size());
         order=randomInt(datatopic.size());
-        ArrayList<String> Answerslist=Controller.dataBase.getVieDescription();
+
+        if(eng_vie){
         for(int i=0;i<datatopic.size();i++)
         {
+            ArrayList<String> Answerslist=Controller.dataBase.getVieDescription();
             answerlist.add(-1);
             ToeicWords w=datatopic.get(order.get(i));
             ArrayList<String> ans=new ArrayList<>();
@@ -74,6 +79,23 @@ public class TestReadingChooseController {
             ans.set(x,w.getViedescriptions());
             Survey survey=new Survey(w.getWord(),ans.get(0),ans.get(1),ans.get(2),ans.get(3),x);
             questions.add(survey);
+        }}else{
+            for(int i=0;i<datatopic.size();i++)
+            {
+                ArrayList<String> Answerslist=Controller.dataBase.getallWord();
+                answerlist.add(-1);
+                ToeicWords w=datatopic.get(order.get(i));
+                ArrayList<String> ans=new ArrayList<>();
+                while(ans.size()<4)
+                {
+                    int x=random.nextInt(Answerslist.size());
+                    if(Answerslist.get(x)!=w.getWord()&&!ans.contains(Answerslist.get(x))) ans.add(Answerslist.get(x));
+                }
+                int x=random.nextInt(4);
+                ans.set(x,w.getWord());
+                Survey survey=new Survey(w.getViedescriptions(),ans.get(0),ans.get(1),ans.get(2),ans.get(3),x);
+                questions.add(survey);
+            }
         }
 
     }
@@ -99,8 +121,7 @@ public class TestReadingChooseController {
         Parent root;
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         if (event.getSource() == backButton||event.getSource()==backButton1) {
-            SelectTopicTestToeicController.selectedTopic.clear();
-            root = FXMLLoader.load(getClass().getResource("SelectTopicTestToiec.fxml"));
+            root = FXMLLoader.load(getClass().getResource("SelectTestOption.fxml"));
         }
         else {
             root = FXMLLoader.load(getClass().getResource("Test_reading_choose.fxml"));
@@ -191,14 +212,14 @@ public class TestReadingChooseController {
             setDisplay();
             startfinish.setText("Nộp bài");
             started=true;
-            second=0;
-            minute=selectedTopic.size();
+            int time=getTime();
+            minute=time/60;
+            second=time-minute*60;
             timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
                     nextbutton.setDisable(false);
                     previousbutton.setDisable(false);
-
                     if (second == 0) {
                         minute--;
                         second = 60;
@@ -208,7 +229,7 @@ public class TestReadingChooseController {
                 }
 
             }));
-            timeline.setCycleCount(60*selectedTopic.size());
+            timeline.setCycleCount(time);
             timeline.play();
             timeline.setOnFinished(new EventHandler<ActionEvent>() {
 
@@ -222,6 +243,14 @@ public class TestReadingChooseController {
             result();
         }
     }
+    private int getTime()
+    {
+        int time=0;
+        if(level==1) time=90*selectedTopic.size();
+        else if(level==2) time=60*selectedTopic.size();
+        else if(level==3) time=45*selectedTopic.size();
+        return time;
+    }
     private void result()
     {
         int point=0;
@@ -234,6 +263,10 @@ public class TestReadingChooseController {
         }
         noti.setVisible(true);
         pointlabel.setText(point+"/"+datatopic.size());
+        if(selectedTopic.size()==1)
+        {
+            Controller.dataBase.updateUserChooseResult(userID,selectedTopic.get(0),point);
+        }
     }
     @FXML
     private void showCorrectAnswers()

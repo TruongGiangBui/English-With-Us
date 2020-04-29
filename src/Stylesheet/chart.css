@@ -1,0 +1,29 @@
+.chart{
+    -fx-pie-label-visible:true;
+    -fx-start-angle:90;
+    -fx-tick-label-fill: white;
+}
+
+.chart-pie-label{
+    -fx-font-size: 10px;
+    -fx-text-fill: white;
+}
+.chart-legend {
+    -fx-stroke: #daa520;
+    -fx-background-color: #e26767;;
+    -fx-text-fill: white;
+}
+
+
+.chart-content{
+    -fx-text-fill: white;
+}
+
+.default-color0.chart-pie{
+    -fx-pie-color: yellow;
+}
+.default-color1.chart-pie{
+    -fx-pie-color: #ff0000;
+}
+
+
