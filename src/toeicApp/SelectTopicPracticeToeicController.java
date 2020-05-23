@@ -15,11 +15,11 @@ import java.io.IOException;
 public class SelectTopicPracticeToeicController {
     public static int selectedTopic;
     @FXML
-    private Button backButton,buttonSelect1,buttonSelect2,buttonSelect3,buttonSelect4,buttonSelect5,buttonSelect6,buttonSelect7,buttonSelect8,buttonSelect9,buttonSelect10,buttonSelect11,buttonSelect12,buttonSelect13,buttonSelect14,buttonSelect15,buttonSelect16,buttonSelect17,buttonSelect18,buttonSelect19,buttonSelect20,buttonSelect21,buttonSelect22,buttonSelect23,buttonSelect24,buttonSelect25,buttonSelect26,buttonSelect27,buttonSelect28,buttonSelect29,buttonSelect30,buttonSelect31,buttonSelect32,buttonSelect33,buttonSelect34,buttonSelect35,buttonSelect36,buttonSelect37,buttonSelect38,buttonSelect39,buttonSelect40,buttonSelect41,buttonSelect42,buttonSelect43,buttonSelect44,buttonSelect45,buttonSelect46,buttonSelect47,buttonSelect48,buttonSelect49,buttonSelect50;
+    private Button close,backButton,buttonSelect1,buttonSelect2,buttonSelect3,buttonSelect4,buttonSelect5,buttonSelect6,buttonSelect7,buttonSelect8,buttonSelect9,buttonSelect10,buttonSelect11,buttonSelect12,buttonSelect13,buttonSelect14,buttonSelect15,buttonSelect16,buttonSelect17,buttonSelect18,buttonSelect19,buttonSelect20,buttonSelect21,buttonSelect22,buttonSelect23,buttonSelect24,buttonSelect25,buttonSelect26,buttonSelect27,buttonSelect28,buttonSelect29,buttonSelect30,buttonSelect31,buttonSelect32,buttonSelect33,buttonSelect34,buttonSelect35,buttonSelect36,buttonSelect37,buttonSelect38,buttonSelect39,buttonSelect40,buttonSelect41,buttonSelect42,buttonSelect43,buttonSelect44,buttonSelect45,buttonSelect46,buttonSelect47,buttonSelect48,buttonSelect49,buttonSelect50;
     @FXML
-    private void handleSelectTopic(ActionEvent event) throws IOException {
+    private void handleScene(ActionEvent event) throws IOException {
         Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        Parent root;
+        Parent root=FXMLLoader.load(getClass().getResource("SelectTopicLearnToeic.fxml"));
         if(event.getSource()==backButton)
         {
             root= FXMLLoader.load(getClass().getResource("mainwindow.fxml"));
@@ -27,9 +27,10 @@ public class SelectTopicPracticeToeicController {
         else if((selectedTopic=checkSelectButton(event))!=0)
         {
             root= FXMLLoader.load(getClass().getResource("SelectPracticeOption.fxml"));
-        }else
+        }else if(event.getSource()==close)
         {
-            root=FXMLLoader.load(getClass().getResource("SelectTopicLearnToeic.fxml"));
+            stage.close();
+            return;
         }
 
         Scene scene=new Scene(root);

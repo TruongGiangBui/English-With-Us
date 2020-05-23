@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class TestReadingWriteController {
+    private ConnectDataBase database=Controller.getDataBase();
     private ArrayList<Integer> selectedTopic=SelectTopicTestToeicController.selectedTopic;
     private int userID=Controller.getUserID();
     private int level=SelectTestOptionController.level;
@@ -48,7 +49,7 @@ public class TestReadingWriteController {
         Random random=new Random();
         for(int topic:selectedTopic)
         {
-            ArrayList<ToeicWords> words=Controller.dataBase.getWord(topic);
+            ArrayList<ToeicWords> words=database.getWord(topic);
             datatopic.addAll(words);
         }
 
@@ -171,9 +172,9 @@ public class TestReadingWriteController {
     private int getTime()
     {
         int time=0;
-        if(level==1) time=90*selectedTopic.size();
-        else if(level==2) time=60*selectedTopic.size();
-        else if(level==3) time=45*selectedTopic.size();
+        if(level==1) time=120*selectedTopic.size();
+        else if(level==2) time=90*selectedTopic.size();
+        else if(level==3) time=60*selectedTopic.size();
         return time;
     }
     private void result()
@@ -188,9 +189,10 @@ public class TestReadingWriteController {
         }
         noti.setVisible(true);
         pointlabel.setText(point+"/"+datatopic.size());
+        point=point*(4+level);
         if(selectedTopic.size()==1)
         {
-            Controller.dataBase.updateUserWriteResult(userID,selectedTopic.get(0),point);
+            database.updateUserWriteResult(userID,selectedTopic.get(0),point);
         }
     }
     @FXML

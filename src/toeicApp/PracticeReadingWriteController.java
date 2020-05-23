@@ -16,10 +16,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class PracticeReadingWriteController {
     private int selectedTopic=SelectTopicPracticeToeicController.selectedTopic;
+    private ConnectDataBase database=Controller.getDataBase();
     @FXML
     private Button backButton;
     @FXML
@@ -42,25 +44,13 @@ public class PracticeReadingWriteController {
     }
     private ArrayList<ToeicWords> datatopic;
     private int selectedWord=0;
-    private ArrayList<Integer> order=new ArrayList<>();
     @FXML
     public void initialize()
     {
         Random random=new Random();
-        datatopic=Controller.dataBase.getWord(selectedTopic);
-        for(int i=0;i<datatopic.size();i++)
-        {
-            order.add(i);
-        }
-        for(int i=0;i<6;i++)
-        {
-            int x=random.nextInt(12);
-            int y=random.nextInt(12);
-            int temp=order.get(x);
-            order.set(x,order.get(y));
-            order.set(y,temp);
-        }
-        description.setText(datatopic.get(order.get(selectedWord)).getViedescriptions());
+        datatopic=database.getWord(selectedTopic);
+        Collections.shuffle(datatopic);
+        description.setText(datatopic.get(selectedWord).getViedescriptions());
     }
     private int turn=0;
     @FXML
@@ -69,7 +59,7 @@ public class PracticeReadingWriteController {
         if(event.getCode()==KeyCode.ENTER)
         {
             turn++;
-            if(textField.getText().contains(datatopic.get(order.get(selectedWord)).getWord())&&turn<4)
+            if(textField.getText().contains(datatopic.get(selectedWord).getWord())&&turn<4)
             {
                 correctLabel.setText("Correct");
                 correctLabel.setVisible(true);
@@ -83,7 +73,7 @@ public class PracticeReadingWriteController {
             }else
             if(turn==4)
             {
-                answerLabel.setText(datatopic.get(order.get(selectedWord)).getWord());
+                answerLabel.setText(datatopic.get(selectedWord).getWord());
                 answerLabel.setVisible(true);
                 textField.clear();
             }
@@ -93,7 +83,7 @@ public class PracticeReadingWriteController {
                 correctLabel.setVisible(false);
                 turn=0;
                 selectedWord=(selectedWord+1)%datatopic.size();
-                description.setText(datatopic.get(order.get(selectedWord)).getViedescriptions());
+                description.setText(datatopic.get(selectedWord).getViedescriptions());
                 textField.clear();
             }
         }

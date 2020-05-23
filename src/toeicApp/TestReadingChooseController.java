@@ -20,13 +20,15 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class TestReadingChooseController {
     private boolean eng_vie=SelectTestOptionController.eng_vie_option;
     private int userID=Controller.getUserID();
     private int level=SelectTestOptionController.level;
-    private ArrayList<Integer> selectedTopic=SelectTopicTestToeicController.selectedTopic;;
+    private ConnectDataBase database=Controller.getDataBase();
+    private ArrayList<Integer> selectedTopic=SelectTopicTestToeicController.selectedTopic;
     @FXML
     private ToggleButton button1,button2,button3,button4;
     @FXML
@@ -39,7 +41,6 @@ public class TestReadingChooseController {
     private Label question,answer1,answer2,answer3,answer4,numberQuestion,clock,pointlabel;
 
     private ArrayList<ToeicWords> datatopic=new ArrayList<>();
-    private ArrayList<Integer> order=new ArrayList<>();
     private ArrayList<Integer> answerlist=new ArrayList<>();
     private ArrayList<Survey> questions=new ArrayList<>();
     private Random random=new Random();
@@ -58,17 +59,17 @@ public class TestReadingChooseController {
         nextbutton.setDisable(true);
         previousbutton.setDisable(true);
         for(int topic:selectedTopic) {
-            datatopic.addAll(Controller.dataBase.getWord(topic));
+            datatopic.addAll(database.getWord(topic));
         }
         numberQuestion.setText("0/"+datatopic.size());
-        order=randomInt(datatopic.size());
+        Collections.shuffle(datatopic);
 
         if(eng_vie){
         for(int i=0;i<datatopic.size();i++)
         {
-            ArrayList<String> Answerslist=Controller.dataBase.getVieDescription();
+            ArrayList<String> Answerslist=database.getVieDescription();
             answerlist.add(-1);
-            ToeicWords w=datatopic.get(order.get(i));
+            ToeicWords w=datatopic.get(i);
             ArrayList<String> ans=new ArrayList<>();
             while(ans.size()<4)
             {
@@ -82,9 +83,9 @@ public class TestReadingChooseController {
         }}else{
             for(int i=0;i<datatopic.size();i++)
             {
-                ArrayList<String> Answerslist=Controller.dataBase.getallWord();
+                ArrayList<String> Answerslist=database.getallWord();
                 answerlist.add(-1);
-                ToeicWords w=datatopic.get(order.get(i));
+                ToeicWords w=datatopic.get(i);
                 ArrayList<String> ans=new ArrayList<>();
                 while(ans.size()<4)
                 {
@@ -99,23 +100,7 @@ public class TestReadingChooseController {
         }
 
     }
-    private ArrayList<Integer> randomInt(int n)
-    {
-        ArrayList<Integer> a=new ArrayList<>();
-        for(int i=0;i<n;i++)
-        {
-            a.add(i);
-        }
-        for(int i=0;i<a.size();i++)
-        {
-            int x=random.nextInt(a.size());
-            int y=random.nextInt(a.size());
-            int temp=a.get(x);
-            a.set(x,a.get(y));
-            a.set(y,temp);
-        }
-        return a;
-    }
+
     @FXML
     public void handleScene(ActionEvent event) throws IOException {
         Parent root;
@@ -263,9 +248,10 @@ public class TestReadingChooseController {
         }
         noti.setVisible(true);
         pointlabel.setText(point+"/"+datatopic.size());
+        point=point*(4+level);
         if(selectedTopic.size()==1)
         {
-            Controller.dataBase.updateUserChooseResult(userID,selectedTopic.get(0),point);
+            database.updateUserChooseResult(userID,selectedTopic.get(0),point);
         }
     }
     @FXML

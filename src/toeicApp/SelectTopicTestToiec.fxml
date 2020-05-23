@@ -10,18 +10,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane minHeight="630.0" styleClass="backgroundmain1" stylesheets="@../Stylesheet/mainwindow.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="toeicApp.SelectTopicTestToeicController">
    <children>
       <AnchorPane layoutX="20.0" prefHeight="100.0" prefWidth="863.0">
          <children>
-            <AnchorPane layoutX="660.0" maxWidth="220.0" minWidth="220.0" prefHeight="100.0" prefWidth="220.0" styleClass="pane1" stylesheets="@../Stylesheet/mainwindow.css" />
+            <AnchorPane layoutX="660.0" maxWidth="220.0" minWidth="220.0" prefHeight="100.0" prefWidth="220.0" styleClass="pane1" stylesheets="@../Stylesheet/mainwindow.css">
+               <children>
+                  <Button fx:id="close" layoutX="150.0" mnemonicParsing="false" onAction="#handleScene" prefHeight="35.0" prefWidth="70.0" styleClass="exitButton" stylesheets="@../Stylesheet/mainwindow.css" text="X" />
+               </children></AnchorPane>
             <ImageView fitHeight="30.0" fitWidth="34.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Resources/Icon/logo.png" />
                </image>
             </ImageView>
-            <Label layoutX="35.0" layoutY="6.0" text="Toeic With Us" textFill="WHITE">
+            <Label layoutX="35.0" layoutY="6.0" text="English With Us" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -30,7 +32,7 @@
       </AnchorPane>
       <AnchorPane layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="backgroundmain" stylesheets="@../Stylesheet/mainwindow.css">
           <children>
-              <Button fx:id="backButton" layoutX="43.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleSelectTopic" prefHeight="3.0" prefWidth="68.0" styleClass="backButtonRed" stylesheets="@button.css" text="Back" textAlignment="CENTER" />
+              <Button fx:id="backButton" layoutX="43.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleScene" prefHeight="3.0" prefWidth="68.0" styleClass="backButtonRed" stylesheets="@button.css" text="Back" textAlignment="CENTER" />
               <ScrollPane hvalue="1.0" layoutX="20.0" layoutY="76.0" prefHeight="499.0" prefWidth="863.0" styleClass="scroll-bar" stylesheets="@../Stylesheet/selectTopic.css">
                   <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" style="-fx-background-radius: 0;" styleClass="border1" stylesheets="@../Stylesheet/selectTopic.css">
@@ -548,7 +550,7 @@
                       </AnchorPane>
                   </content>
               </ScrollPane>
-            <Button fx:id="okbutton" layoutX="761.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleSelectTopic" prefHeight="3.0" prefWidth="68.0" styleClass="backButtonRed" stylesheets="@button.css" text="Ok" textAlignment="CENTER" />
+            <Button fx:id="okbutton" layoutX="761.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleScene" prefHeight="3.0" prefWidth="68.0" styleClass="backButtonRed" stylesheets="@button.css" text="Ok" textAlignment="CENTER" />
           </children>
       </AnchorPane>
    </children>

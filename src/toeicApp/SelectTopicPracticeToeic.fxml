@@ -9,18 +9,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane minHeight="630.0" styleClass="backgroundmain1" stylesheets="@../Stylesheet/mainwindow.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="toeicApp.SelectTopicPracticeToeicController">
    <children>
       <AnchorPane layoutX="20.0" prefHeight="100.0" prefWidth="863.0">
          <children>
-            <AnchorPane layoutX="660.0" maxWidth="220.0" minWidth="220.0" prefHeight="100.0" prefWidth="220.0" styleClass="pane1" stylesheets="@../Stylesheet/mainwindow.css" />
+            <AnchorPane layoutX="660.0" maxWidth="220.0" minWidth="220.0" prefHeight="100.0" prefWidth="220.0" styleClass="pane1" stylesheets="@../Stylesheet/mainwindow.css">
+               <children>
+                  <Button fx:id="close" layoutX="150.0" mnemonicParsing="false" onAction="#handleScene" prefHeight="35.0" prefWidth="70.0" styleClass="exitButton" stylesheets="@../Stylesheet/mainwindow.css" text="X" />
+               </children></AnchorPane>
             <ImageView fitHeight="30.0" fitWidth="34.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Resources/Icon/logo.png" />
                </image>
             </ImageView>
-            <Label layoutX="35.0" layoutY="6.0" text="Toeic With Us" textFill="WHITE">
+            <Label layoutX="35.0" layoutY="6.0" text="English With Us" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -29,7 +31,7 @@
       </AnchorPane>
       <AnchorPane layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="backgroundmain" stylesheets="@../Stylesheet/mainwindow.css">
           <children>
-              <Button fx:id="backButton" layoutX="43.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleSelectTopic" prefHeight="3.0" prefWidth="68.0" styleClass="backButtonRed" stylesheets="@button.css" text="Back" textAlignment="CENTER" />
+              <Button fx:id="backButton" layoutX="43.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleScene" prefHeight="3.0" prefWidth="68.0" styleClass="backButtonRed" stylesheets="@button.css" text="Back" textAlignment="CENTER" />
               <ScrollPane hvalue="1.0" layoutX="20.0" layoutY="76.0" prefHeight="499.0" prefWidth="863.0" styleClass="scroll-bar" stylesheets="@../Stylesheet/selectTopic.css">
                   <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" style="-fx-background-radius: 0;" styleClass="border" stylesheets="@../Stylesheet/selectTopic.css">
@@ -39,7 +41,7 @@
       
                                                   <AnchorPane prefHeight="120.0" prefWidth="817.0">
                                           <children>
-                                              <Button fx:id="buttonSelect1" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Contracts" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect1" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Contracts" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -48,7 +50,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect2" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Marketing" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect2" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Marketing" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -57,7 +59,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect3" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Warrranties" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect3" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Warrranties" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -66,7 +68,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect4" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Business Planning" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect4" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Business Planning" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -79,7 +81,7 @@
                                       </AnchorPane>
                                       <AnchorPane prefHeight="120.0" prefWidth="817.0">
                                           <children>
-                                              <Button fx:id="buttonSelect5" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Conferences" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect5" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Conferences" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -88,7 +90,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect6" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Computers and the Internet" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect6" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Computers and the Internet" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -97,7 +99,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect7" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Office Technology" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect7" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Office Technology" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -106,7 +108,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect8" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Office Procedures" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect8" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Office Procedures" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -119,7 +121,7 @@
                                       </AnchorPane>
                                       <AnchorPane prefHeight="120.0" prefWidth="817.0">
                                           <children>
-                                              <Button fx:id="buttonSelect9" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Electronics" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect9" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Electronics" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -128,7 +130,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect10" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Correspondence" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect10" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Correspondence" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -137,7 +139,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect11" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Job Ads and Recruitment" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect11" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Job Ads and Recruitment" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -146,7 +148,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect12" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Apply and Interviewing" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect12" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Apply and Interviewing" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -159,7 +161,7 @@
                                       </AnchorPane>
                                       <AnchorPane prefHeight="120.0" prefWidth="817.0">
                                           <children>
-                                              <Button fx:id="buttonSelect13" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Hiring and Training" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect13" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Hiring and Training" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -168,7 +170,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect14" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Salaries and Benefits" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect14" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Salaries and Benefits" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -177,7 +179,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect15" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Promotions, Pensions and Awards" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect15" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Promotions, Pensions and Awards" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -186,7 +188,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect16" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Shopping" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect16" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Shopping" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -199,7 +201,7 @@
                                       </AnchorPane>
                                       <AnchorPane prefHeight="120.0" prefWidth="817.0">
                                           <children>
-                                              <Button fx:id="buttonSelect17" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Ordering Supplies" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect17" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Ordering Supplies" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -208,7 +210,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect18" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Shipping" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect18" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Shipping" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -217,7 +219,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect19" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Invoices" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect19" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Invoices" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -226,7 +228,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect20" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Inventory" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect20" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Inventory" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -239,7 +241,7 @@
                                       </AnchorPane>
                                       <AnchorPane prefHeight="120.0" prefWidth="817.0">
                                           <children>
-                                              <Button fx:id="buttonSelect21" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Banking" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect21" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Banking" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -248,7 +250,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect22" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Accounting" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect22" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Accounting" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -257,7 +259,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect23" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Investments" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect23" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Investments" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -266,7 +268,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect24" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Taxes" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect24" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Taxes" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -279,7 +281,7 @@
                                       </AnchorPane>
                                       <AnchorPane prefHeight="120.0" prefWidth="817.0">
                                           <children>
-                                              <Button fx:id="buttonSelect25" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Financial Statements" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect25" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Financial Statements" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -288,7 +290,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect26" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Property and Departments" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect26" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Property and Departments" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -297,7 +299,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect27" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Board Meeting and Committees" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect27" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Board Meeting and Committees" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -306,7 +308,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect28" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Quality Control" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect28" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Quality Control" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -319,7 +321,7 @@
                                       </AnchorPane>
                                       <AnchorPane prefHeight="120.0" prefWidth="817.0">
                                           <children>
-                                              <Button fx:id="buttonSelect29" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Product Development" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect29" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Product Development" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -328,7 +330,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect30" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Renting and Leasing" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect30" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Renting and Leasing" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -337,7 +339,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect31" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Selecting A Restaurant" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect31" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Selecting A Restaurant" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -346,7 +348,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect32" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Eating Out" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect32" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Eating Out" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -359,7 +361,7 @@
                                       </AnchorPane>
                                       <AnchorPane prefHeight="120.0" prefWidth="817.0">
                                           <children>
-                                              <Button fx:id="buttonSelect33" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Ordering Lunch" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect33" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Ordering Lunch" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -368,7 +370,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect34" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Cooking As A Career" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect34" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Cooking As A Career" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -377,7 +379,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect35" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Events" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect35" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Events" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -386,7 +388,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect36" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="General Travel" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect36" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="General Travel" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -399,7 +401,7 @@
                                       </AnchorPane>
                                       <AnchorPane prefHeight="120.0" prefWidth="817.0">
                                           <children>
-                                              <Button fx:id="buttonSelect37" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Airlines" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect37" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Airlines" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -408,7 +410,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect38" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Trains" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect38" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Trains" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -417,7 +419,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect39" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Hotels" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect39" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Hotels" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -426,7 +428,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect40" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Car Rentals" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect40" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Car Rentals" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -439,7 +441,7 @@
                                       </AnchorPane>
                                       <AnchorPane prefHeight="120.0" prefWidth="817.0">
                                           <children>
-                                              <Button fx:id="buttonSelect41" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Movies" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect41" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Movies" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -448,7 +450,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect42" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Theater" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect42" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Theater" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -457,7 +459,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect43" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Music" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect43" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Music" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -466,7 +468,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect44" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Museums" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect44" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Museums" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -479,7 +481,7 @@
                                       </AnchorPane>
                                       <AnchorPane prefHeight="120.0" prefWidth="817.0">
                                           <children>
-                                              <Button fx:id="buttonSelect45" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Media" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect45" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Media" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -488,7 +490,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect46" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Doctor's Office" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect46" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Doctor's Office" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -497,7 +499,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect47" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Dentist's Office" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect47" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Dentist's Office" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -506,7 +508,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect48" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Health" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect48" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Health" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -520,7 +522,7 @@
       
                                                   <AnchorPane prefHeight="120.0" prefWidth="817.0">
                                           <children>
-                                              <Button fx:id="buttonSelect49" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Hospitals" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect49" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Hospitals" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -529,7 +531,7 @@
                                                       </ImageView>
                                                   </graphic>
                                     </Button>
-                                              <Button fx:id="buttonSelect50" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSelectTopic" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Pharmacy" textAlignment="CENTER">
+                                              <Button fx:id="buttonSelect50" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" styleClass="selectTestButton" stylesheets="@../Stylesheet/selectTest.css" text="Pharmacy" textAlignment="CENTER">
                                                   <graphic>
                                                       <ImageView fitHeight="113.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>

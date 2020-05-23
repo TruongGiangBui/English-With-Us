@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="630.0" styleClass="backgroundmain1" stylesheets="@../Stylesheet/mainwindow.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="toeicApp.UserwordController">
+    <children>
+        <AnchorPane minHeight="25.0" prefHeight="95.0" prefWidth="900.0">
+            <children>
+                <AnchorPane layoutX="680.0" maxWidth="220.0" minWidth="220.0" prefHeight="100.0" prefWidth="283.0" styleClass="pane1" stylesheets="@../Stylesheet/mainwindow.css">
+                    <children>
+                        <Button fx:id="close" layoutX="150.0" mnemonicParsing="false" onAction="#handleScene" prefHeight="38.0" prefWidth="70.0" styleClass="exitButton" stylesheets="@../Stylesheet/mainwindow.css" text="X" />
+                        <Button layoutX="98.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="52.0" styleClass="exitButton" stylesheets="@../Stylesheet/mainwindow.css" text="--" />
+                        <Label layoutX="20.0" layoutY="4.0" text="User's word" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <ImageView fitHeight="30.0" fitWidth="34.0" layoutX="20.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Resources/Icon/logo.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="55.0" layoutY="6.0" text="English With Us" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="backgroundmain" stylesheets="@../Stylesheet/mainwindow.css">
+            <children>
+                <Button fx:id="backButton" layoutX="44.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleScene" prefHeight="30.0" prefWidth="68.0" styleClass="backButton1" stylesheets="@../Stylesheet/Test.css" text="Back" />
+            <TabPane layoutX="26.0" layoutY="61.0" prefHeight="518.0" prefWidth="848.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Untitled Tab 1">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="486.0" prefWidth="841.0">
+                           <children>
+                              <AnchorPane layoutX="51.0" layoutY="35.0" prefHeight="456.0" prefWidth="301.0" styleClass="pane1" stylesheets="@../Stylesheet/Userword.css">
+                                 <children>
+                                    <ListView fx:id="wordlist" layoutX="9.0" layoutY="10.0" prefHeight="433.0" prefWidth="285.0" styleClass="list-cell" stylesheets="@../Stylesheet/Userword.css">
+                                       <contextMenu>
+                                          <ContextMenu fx:id="listcontextmenu">
+                                            <items>
+                                              <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                                            </items>
+                                          </ContextMenu>
+                                       </contextMenu>
+                                    </ListView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="362.0" layoutY="35.0" prefHeight="458.0" prefWidth="432.0" styleClass="border" stylesheets="@../Stylesheet/mainwindow.css">
+                                 <children>
+                                    <Label fx:id="pro" layoutX="37.0" layoutY="68.0" prefHeight="42.0" prefWidth="381.0" text="Label" wrapText="true">
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0" startX="0.6047619047619047">
+                                             <stops>
+                                                <Stop color="#0093ff" />
+                                                <Stop color="WHITE" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                       <font>
+                                          <Font name="System Bold Italic" size="24.0" />
+                                       </font></Label>
+                                    <Label fx:id="des" layoutX="26.0" layoutY="133.0" prefHeight="116.0" prefWidth="390.0" text="suifdghsiuyfiushifhsdilufhiushfiuhsdifhshfhshfoisf" textFill="#ffc300" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold Italic" size="20.0" />
+                                       </font></Label>
+                                    <Label fx:id="exam" layoutX="27.0" layoutY="251.0" prefHeight="107.0" prefWidth="388.0" text="dd" textFill="#1eff00" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font></Label>
+                                    <Label fx:id="note" layoutX="26.0" layoutY="363.0" prefHeight="76.0" prefWidth="390.0" text="Label" textFill="#01fffb" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold Italic" size="19.0" />
+                                       </font></Label>
+                                    <Label fx:id="wo" layoutX="30.0" layoutY="17.0" prefHeight="45.0" prefWidth="386.0" text="Label" wrapText="true">
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                                             <stops>
+                                                <Stop color="#ff2600" />
+                                                <Stop color="WHITE" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                       <font>
+                                          <Font name="System Bold" size="30.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="26.0" layoutY="119.0" text="Description" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="26.0" layoutY="241.0" text="Example" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="26.0" layoutY="350.0" text="Note" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <Button layoutX="51.0" layoutY="2.0" mnemonicParsing="false" onAction="#add" text="new..." />
+                              <TextField fx:id="search_text" layoutX="105.0" layoutY="2.0" />
+                              <Button layoutX="261.0" layoutY="2.0" mnemonicParsing="false" onAction="#search_word" text="search" />
+                              <Button layoutX="319.0" layoutY="2.0" mnemonicParsing="false" onAction="#clearSearch" prefHeight="25.0" prefWidth="27.0" text="()" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Untitled Tab 2">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="518.0" prefWidth="794.0" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <AnchorPane fx:id="add" layoutX="119.0" layoutY="67.0" maxWidth="662.0" minWidth="220.0" prefHeight="493.0" prefWidth="662.0" styleClass="pane1" stylesheets="@../Stylesheet/mainwindow.css" visible="false">
+               <children>
+                  <Label alignment="CENTER" layoutX="215.0" layoutY="14.0" prefHeight="42.0" prefWidth="232.0" text="ADD WORD" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="add_word" layoutX="190.0" layoutY="69.0" prefHeight="38.0" prefWidth="419.0" />
+                  <TextField fx:id="add_pronounce" layoutX="190.0" layoutY="117.0" prefHeight="38.0" prefWidth="419.0" />
+                  <TextArea fx:id="add_Des" layoutX="190.0" layoutY="163.0" prefHeight="89.0" prefWidth="419.0" />
+                  <TextArea fx:id="add_Ex" layoutX="190.0" layoutY="262.0" prefHeight="89.0" prefWidth="419.0" />
+                  <TextArea fx:id="add_Note" layoutX="190.0" layoutY="362.0" prefHeight="67.0" prefWidth="419.0" />
+                  <Label layoutX="65.0" layoutY="68.0" text="Word" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="29.0" layoutY="189.0" text="Description" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="46.0" layoutY="288.0" text="Example" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="35.0" layoutY="117.0" text="Pronounce" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="69.0" layoutY="377.0" text="Note" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="26.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="add_confirm" layoutX="400.0" layoutY="446.0" mnemonicParsing="false" onAction="#addword" prefHeight="25.0" prefWidth="46.0" text="Save" />
+                  <Button fx:id="add_cancel" layoutX="311.0" layoutY="446.0" mnemonicParsing="false" onAction="#addword" text="Cancel" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="deletew" layoutX="305.0" layoutY="208.0" maxWidth="285.0" minWidth="220.0" prefHeight="158.0" prefWidth="285.0" styleClass="pane1" stylesheets="@../Stylesheet/mainwindow.css" visible="false">
+               <children>
+                  <Button fx:id="delete_cancel" layoutX="67.0" layoutY="105.0" mnemonicParsing="false" onAction="#deleteWord" text="No" />
+                  <Button fx:id="delete_confirm" layoutX="158.0" layoutY="105.0" mnemonicParsing="false" onAction="#deleteWord" text="Yes" />
+               </children>
+            </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

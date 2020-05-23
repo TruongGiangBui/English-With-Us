@@ -34,7 +34,7 @@
                         <Image url="@../Resources/Icon/logo.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="55.0" layoutY="6.0" text="Toeic With Us" textFill="WHITE">
+                  <Label layoutX="55.0" layoutY="6.0" text="English With Us" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
@@ -103,7 +103,7 @@
                                           <Font name="System Bold" size="30.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="testbutton1" layoutY="273.0" mnemonicParsing="false" onAction="#handleScene" prefHeight="80.0" prefWidth="518.0" styleClass="Button4" stylesheets="@../Stylesheet/mainwindow.css" text="Kho từ của bạn" wrapText="true">
+                                    <Button fx:id="userwordbutton" layoutY="273.0" mnemonicParsing="false" onAction="#handleScene" prefHeight="80.0" prefWidth="518.0" styleClass="Button4" stylesheets="@../Stylesheet/mainwindow.css" text="Kho từ của bạn" wrapText="true">
                                        <graphic>
                                           <ImageView fx:id="icon211" fitHeight="42.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -196,12 +196,12 @@
                   </AnchorPane>
                   <AnchorPane layoutX="31.0" layoutY="240.0" prefHeight="330.0" prefWidth="286.0" styleClass="loginform" stylesheets="@../Stylesheet/mainwindow.css">
                      <children>
-                        <LineChart layoutX="-25.0" layoutY="14.0" prefHeight="230.0" prefWidth="305.0">
+                        <LineChart fx:id="chart" layoutX="-25.0" layoutY="14.0" prefHeight="230.0" prefWidth="305.0">
                           <xAxis>
-                            <CategoryAxis side="BOTTOM" />
+                            <NumberAxis label="Day" side="BOTTOM" />
                           </xAxis>
                           <yAxis>
-                            <NumberAxis side="LEFT" />
+                            <NumberAxis label="point" side="LEFT" />
                           </yAxis>
                         </LineChart>
                         <Button fx:id="result" layoutX="40.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleScene" prefHeight="25.0" prefWidth="207.0" styleClass="Button5" stylesheets="@../Stylesheet/mainwindow.css" text="Xem kết quả học tập ">

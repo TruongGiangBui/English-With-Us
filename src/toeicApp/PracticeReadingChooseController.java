@@ -13,10 +13,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class PracticeReadingChooseController {
     private int selectedTopic=SelectTopicPracticeToeicController.selectedTopic;
+    private ConnectDataBase database=Controller.getDataBase();
     @FXML
     private Button backButton,nextbutton,previousbutton;
     @FXML
@@ -32,20 +34,9 @@ public class PracticeReadingChooseController {
     @FXML
     public void initialize()
     {
-        datatopic=Controller.dataBase.getWord(selectedTopic);
+        datatopic=database.getWord(selectedTopic);
         numberQuestion.setText("0/12");
-        for(int i=0;i<datatopic.size();i++)
-        {
-            order.add(i);
-        }
-        for(int i=0;i<6;i++)
-        {
-            int x=random.nextInt(12);
-            int y=random.nextInt(12);
-            int temp=order.get(x);
-            order.set(x,order.get(y));
-            order.set(y,temp);
-        }
+        Collections.shuffle(datatopic);
         setDisplay();
     }
 
@@ -67,7 +58,7 @@ public class PracticeReadingChooseController {
     private void setDisplay()
     {
         numberQuestion.setText(String.valueOf(selectedword+1)+"/"+String.valueOf(datatopic.size()));
-        question.setText(datatopic.get(order.get(selectedword)).getWord());
+        question.setText(datatopic.get(selectedword).getWord());
         questionlist.clear();
         while(questionlist.size()<4)
         {
@@ -77,17 +68,16 @@ public class PracticeReadingChooseController {
 
         questionlist.set(random.nextInt(4),selectedword);
 
-        answer1.setText(datatopic.get(order.get(questionlist.get(0))).getViedescriptions());
-        answer2.setText(datatopic.get(order.get(questionlist.get(1))).getViedescriptions());
-        answer3.setText(datatopic.get(order.get(questionlist.get(2))).getViedescriptions());
-        answer4.setText(datatopic.get(order.get(questionlist.get(3))).getViedescriptions());
+        answer1.setText(datatopic.get(questionlist.get(0)).getViedescriptions());
+        answer2.setText(datatopic.get(questionlist.get(1)).getViedescriptions());
+        answer3.setText(datatopic.get(questionlist.get(2)).getViedescriptions());
+        answer4.setText(datatopic.get(questionlist.get(3)).getViedescriptions());
     }
     @FXML
     public void handleQuestion(ActionEvent event)
     {
         if(event.getSource()==button1)
         {
-            System.out.println(questionlist.get(0)+" "+selectedword);
             if(questionlist.get(0)==selectedword){
                 noti.setText("Correct");
             }

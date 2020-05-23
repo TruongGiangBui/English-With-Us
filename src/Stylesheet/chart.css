@@ -10,7 +10,7 @@
 }
 .chart-legend {
     -fx-stroke: #daa520;
-    -fx-background-color: #e26767;;
+    -fx-background-color: #e26767;
     -fx-text-fill: white;
 }
 
@@ -27,3 +27,10 @@
 }
 
 
+
+.chart {
+    -fx-padding: 10px;
+}
+.chart-content {
+    -fx-padding: 30px;
+}

@@ -1,7 +1,11 @@
 package toeicApp;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ConnectDataBase {
 
@@ -128,7 +132,7 @@ public class ConnectDataBase {
 
     public boolean addUserWord(UserWords word,int userID)
     {
-        String query="INSERT INTO userwords values ('"+word.getWord()+"','"+word.getDescription()+"','"+word.getExample()+"',"+userID+");";
+        String query="INSERT INTO userwords values ('"+word.getWord()+"','"+word.getPronounce()+"','"+word.getDescription()+"','"+word.getExample()+"','"+ word.getNote()+"',"+userID+");";
         try{
             Statement statement=conn.createStatement();
             statement.executeUpdate(query);
@@ -139,29 +143,50 @@ public class ConnectDataBase {
             return false;
         }
     }
-    public int submitLogin(String username,String password)
+
+    public void deleteUserWord(String word,int userID)
     {
+        String query="Delete from userwords where word='"+word+"' and ID="+userID;
         try{
             Statement statement=conn.createStatement();
-            ResultSet resultSet=statement.executeQuery("select ID from users where userID like '"+username+"' and password='"+password+"'");
+            statement.executeUpdate(query);
+        }catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public ArrayList<Integer> submitLogin(String username,String password)
+    {
+        ArrayList<Integer> data=new ArrayList<>();
+        try{
+            Statement statement=conn.createStatement();
+            ResultSet resultSet=statement.executeQuery("select ID,turn from users where userID like '"+username+"' and password='"+password+"'");
             if(resultSet.next())
             {
-                return resultSet.getInt(1);
+                int oldturn=resultSet.getInt(2);
+                int ID=resultSet.getInt(1);
+                statement.executeUpdate("update users " +
+                        "set turn = "+String.valueOf(oldturn+1) +
+                        " where ID="+ID);
+                data.add(ID);
+                data.add(oldturn+1);
+                return data;
             }
-            else return -1;
+            else return null;
         }
         catch (SQLException e)
         {
             e.printStackTrace();
         }
-        return -1;
+        return null;
     }
 
     public void newuser(String username,String password)
     {
         try{
             Statement statement=conn.createStatement();
-           statement.execute("insert into users(userID,password) VALUES ('"+username+"','"+password+"');");
+           statement.execute("insert into users(userID,password,turn) VALUES ('"+username+"','"+password+"',0);");
            ResultSet res =statement.executeQuery("select ID from users where userID='"+username+"'");
            if(res.next())
            {
@@ -179,9 +204,9 @@ public class ConnectDataBase {
         }
     }
 
-    public ArrayList<UserWords> getUserWord(int userID)
+    public ObservableList<UserWords> getUserWord(int userID)
     {
-        ArrayList<UserWords> data=new ArrayList<>();
+       ObservableList<UserWords> data= FXCollections.observableArrayList();
         String query="Select *from userwords where ID="+userID;
         try{
             Statement statement=conn.createStatement();
@@ -189,9 +214,11 @@ public class ConnectDataBase {
             while(resultSet.next())
             {
                 String word=resultSet.getString(1);
-                String des=resultSet.getString(2);
-                String exa=resultSet.getString(3);
-                data.add(new UserWords(word,des,exa));
+                String pro=resultSet.getString(2);
+                String des=resultSet.getString(3);
+                String exa=resultSet.getString(4);
+                String note=resultSet.getString(5);
+                data.add(new UserWords(word,pro,des,exa,note));
             }
 
         }catch (SQLException e)
@@ -200,6 +227,7 @@ public class ConnectDataBase {
         }
         return data;
     }
+
     public void updateUserChooseResult(int userID,int topicID,int result)
     {
         try
@@ -212,7 +240,7 @@ public class ConnectDataBase {
                 if(choose<result)
                 {
                     statement.executeUpdate("update ToeicTestResult set choose="+result+" where userID="+userID+" and topicID="+topicID);
-                    if(write>10&&result>10)
+                    if(write>60&&result>60)
                     {
                         statement.executeUpdate("update ToeicTestResult set passed=1 where userID="+userID+" and topicID="+topicID);
                     }
@@ -222,6 +250,7 @@ public class ConnectDataBase {
             throwables.printStackTrace();
         }
     }
+
     public void updateUserWriteResult(int userID,int topicID,int result)
     {
         try
@@ -234,7 +263,7 @@ public class ConnectDataBase {
                 if(write<result)
                 {
                     statement.executeUpdate("update ToeicTestResult set write ="+result+" where userID="+userID+" and topicID="+topicID);
-                    if(write>10&&result>10)
+                    if(write>60&&result>60)
                     {
                         statement.executeUpdate("update ToeicTestResult set passed=1 where userID="+userID+" and topicID="+topicID);
                     }
@@ -258,5 +287,40 @@ public class ConnectDataBase {
             e.printStackTrace();
         }
         return pass*2;
+    }
+    public void savedata(int userID,int turn)
+    {
+        int point=0;
+        try{
+            Statement statement=conn.createStatement();
+            ResultSet resultSet=statement.executeQuery("select choose,write from ToeicTestResult where userID="+userID);
+            while(resultSet.next())
+            {
+                point+=resultSet.getInt(1);
+                point+=resultSet.getInt(2);
+            }
+            statement.executeUpdate("insert into history values("+userID+","+turn+","+point+")");
+        }catch(SQLException e)
+        {
+            e.printStackTrace();
+        }
+    }
+    public HashMap<Integer,Integer> getHistory(int userID)
+    {
+        HashMap<Integer,Integer> data=new HashMap<>();
+        try{
+            Statement statement=conn.createStatement();
+            ResultSet resultSet=statement.executeQuery("select turn,point from history where userID="+userID);
+            while (resultSet.next())
+            {
+                int turn=resultSet.getInt(1);
+                int point=resultSet.getInt(2);
+                data.put(turn,point);
+            }
+        }catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return data;
     }
 }

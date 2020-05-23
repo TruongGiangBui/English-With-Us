@@ -1,6 +1,9 @@
 package toeicApp;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -14,6 +17,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -21,6 +26,7 @@ import java.util.ArrayList;
 
 public class LearnToeicController  {
     private int selectedTopic=SelectTopicLearnToeicController.selectedTopic;
+    private ConnectDataBase database=Controller.getDataBase();
     @FXML
     private Button backButton,nextButton,prevButton;
     @FXML
@@ -36,15 +42,14 @@ public class LearnToeicController  {
             String localURL=file.toURI().toURL().toString();
             Media media = new Media(localURL);
             MediaPlayer mp = new MediaPlayer(media);
-            mp.setCycleCount(MediaPlayer.INDEFINITE);
-            mp.setOnEndOfMedia(new Runnable() {
+            Timeline timeline=new Timeline(new KeyFrame(Duration.seconds(3), new EventHandler<ActionEvent>() {
                 @Override
-                public void run() {
-                     if(mp.getCycleCount()==3) mp.stop();
+                public void handle(ActionEvent event) {
+                    mp.play();
                 }
-            });
-            mp.play();
-
+            }));
+            timeline.setCycleCount(5);
+            timeline.play();
         }
         catch (Exception e)
         {
@@ -58,7 +63,7 @@ public class LearnToeicController  {
     @FXML
     public void initialize() throws IOException {
             // show first word in word list
-           datatopic=Controller.dataBase.getWord(selectedTopic);
+           datatopic=database.getWord(selectedTopic);
            //getting word by selected topic from database
            selectedWord=0;
            topic.setText(String.valueOf(datatopic.get(0).getIndexofTopic())+": "+datatopic.get(0).getTopic());

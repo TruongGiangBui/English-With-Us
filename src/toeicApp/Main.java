@@ -23,13 +23,17 @@ public class Main extends Application {
         scene.setFill(Color.TRANSPARENT);
         File file=new File("src/Resources/Icon/biglogo.png");
         primaryStage.getIcons().add(new Image(file.toURI().toURL().toString()));
+        primaryStage.setResizable(true);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
     @Override
     public void stop() throws Exception {
-        Controller.dataBase.closeConnect();
+        if(Controller.isLogedin()) {
+            Controller.getDataBase().savedata(Controller.getUserID(), Controller.getTurn());
+        }
+        Controller.getDataBase().closeConnect();
         super.stop();
     }
 
